@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PASSWORD VALIDATOR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+    function matchPassword() {
+        let pw1 = document.getElementById("pswd1").value;
+        let pw2 = document.getElementById("pswd2").value;
+        if(pw1 == "")
+        {
+            document.getElementById("message2").innerHTML = "Fill password please";
+            return false;
+        }
+        if(pw1 != pw2)
+        {
+            document.getElementById("message").innerHTML = "** Password are not same";
+            return false;
+            // alert("password did not matched");
+        } else {
+            alert("Password Matched Successfully");
+        }
+    }
+</script>
+<body>
+    <div>
+        <h1>PW Skills Password Validator</h1>
+
+        <form onsubmit="matchPassword()">
+            <!-- Enter password -->
+
+            <td>Enter Password</td>
+            <input class="pwd1" type="password" id="pswd1" value="">
+            <span id="message2"></span>
+            <br><br>
+
+            <!-- confirm password -->
+
+            <td>Confirm Password</td>
+            <input class="pwd2" type="password" id="pswd2" value="">
+            <span id="message"></span>
+            <br><br>
+
+            <!-- submit to validate password -->
+
+            <input class="submit" type="submit" value="Submit">
+
+            <!-- reset feild -->
+        
+            <button type="reset" class="reset">Reset</button>
+
+        </form>
+    </div>
+    
+</body>
+</html>
